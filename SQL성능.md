@@ -68,6 +68,21 @@ UNION  (ALL)
 
 SELECT * FROM B
 
+# 쿼리 실행속도 개선
+- 꼭 필요한 컬럼만 추출한다.(select * from 스타일은 속도를 느리게 한다.)
+- OUTER JOIN은 사용은 되도록 자제 한다.( 풀스캔 해야 하므로 속도가 느려진다.)
+- DISTINCT는 되도록 사용하지 않는다. 대신 GROUP BY를 통해 원하는 데이터를 추출 할 수 있다.
+- 서브 쿼리로 가져오는 것 보다 조인하는 편이 낫다.
+- ORDER BY는 속도를 떨어트리는 주 요인이다.
+- IN은 괜찮지만 NOT IN은 데이터가 많은 경우 느려질 수 있다.
+
+
+SELECT * FROM USER
+WHERE USER_ID IN ( 'ID01' , 'ID02' , 'ID03');
+
+SELECT * FROM USER
+WHERE USER_ID = 'ID01' OR USER_ID = 'ID02' OR USER_ID = 'ID03'
+
 
 
 
