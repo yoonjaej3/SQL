@@ -1,5 +1,6 @@
+# CHAR vs VARCHAR
 
-#CHAR vs VARCHAR
+
 
 **CHAR**
 
